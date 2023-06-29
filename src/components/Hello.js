@@ -1,10 +1,16 @@
-function Hello() {
+function Hello({nome, idade}) {
     let msg = "Hi World!";
-    console.log(msg);
+    if(nome) {
+        msg = "Hi "+nome;
+    }
+
+    console.log(typeof idade);
 
     return (
-        <h1>{msg}</h1>
-    )
+        (idade >= 18) 
+            ?<h1>{msg} - Voce tem permissao</h1>
+            :<h1>{msg} - Voce nao pode passar</h1>
+    );
 }
 
 export default Hello;
